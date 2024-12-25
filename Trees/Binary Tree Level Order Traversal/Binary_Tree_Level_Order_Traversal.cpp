@@ -1,0 +1,28 @@
+// Problem Name: LC - 102. Binary Tree Level Order Traversal
+// Problem Link: https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> ans;
+        if (!root)
+            return ans;
+        queue<TreeNode*> q;
+        q.push(root);
+        while (!q.empty()) {
+            int sz = q.size();
+            vector<int> level;
+            for (int i = 0; i < sz; i++) {
+                TreeNode* node = q.front();
+                q.pop();
+                if (node->left)
+                    q.push(node->left);
+                if (node->right)
+                    q.push(node->right);
+                level.push_back(node->val);
+            }
+            ans.push_back(level);
+        }
+        return ans;
+    }
+};
