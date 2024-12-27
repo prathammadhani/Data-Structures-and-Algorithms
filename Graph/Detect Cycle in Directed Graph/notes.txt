@@ -11,7 +11,7 @@ To check whether directed graph has cycle or not by using kahn's algorithm:
 3. While queue is not empty:
     a. Get front node (currNode) in the queue and pop it from the queue.
     b. Keep incrementing the counter to keep track of number of nodes/vertices added in topological sort order.
-    c. Traverse all the adjacent node(s) of the currNode and decremenet the inDegree of each adjacent node(s) by one as
+    c. Traverse all the adjacent node(s) of the currNode and decrement the inDegree of each adjacent node(s) by one as
     we're going to remove the currNode.
     d. If inDegree of the adjacent node(s) becomes 0 in the process, then push it into queue for further traversal.
 4. If counter value is equal to number of vertices (V), then return false which means directed graph does not have a cycle.
